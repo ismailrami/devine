@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>
+      Game
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	
+  	<ion-list>
+
+	 <ion-item>
+	    <ion-label floating>Username</ion-label>
+	    <ion-input type="text" [(ngModel)]="person"></ion-input>
+	</ion-item>
+
+	<ion-item padding>
+	    <ion-label floating>Password</ion-label>
+	    <ion-input type="password" [(ngModel)]="pass"></ion-input>
+	</ion-item>
+
+	<ion-list padding>
+		 <ion-item>
+		    <ion-label>Language of game</ion-label>
+		    <ion-select [(ngModel)]="language" >
+		    	
+		    	<ion-option  *ngFor="let lango of lan_glob" [value]="lango"> {{lango}} </ion-option>		      
+		      
+		    </ion-select>
+  		</ion-item>
+	</ion-list>
+
+	<button ion-button full (tap) ="onSubmit()">Submit</button>
+
+  </ion-list>
+
+</ion-content>
